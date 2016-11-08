@@ -1,0 +1,33 @@
+header {
+    background-color: #244751;
+    color: #E8FDFF;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family:Indie Flower;
+}
+
+main {
+    background-color: white;
+    padding: 16px;
+}
+
+.post {
+    margin-bottom: 48px;
+}
+
+.post .user-info img {
+    border-radius: 50%;
+}
+
+h2:hover {
+    color: pink;
+}
+
+.actions:hover {
+    text-decoration: underline;
+}
+.comment-count:hover {
+    text-decoration: underline;
+}
