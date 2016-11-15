@@ -8,7 +8,7 @@ class CreateBaseTables < ActiveRecord::Migration
       t.string :password
       t.timestamps
     end
-
+    
     create_table :posts do |t|
       t.references :user
       t.string :photo_url
