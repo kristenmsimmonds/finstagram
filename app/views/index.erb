@@ -1,6 +1,14 @@
+<% if current_user %>
+    <div class = "new-post">
+        <a href = "/posts/new" class="Button">New Post</a>
+    </div>
+<% end %>
+
+
+
 <main role="main">
     <% @posts.each do |post| %>
-        <%= erb(:'shared/post', { locals: { post: post }}) %>
+        <%= erb(:'/posts/shared/post', { locals: { post: post}}) %>
     <% end %>
 </main>
         
