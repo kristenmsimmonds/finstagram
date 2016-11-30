@@ -11,14 +11,14 @@ class Post < ActiveRecord::Base
         time_ago_in_minutes = time_ago_in_seconds / 60
         time_ago_in_hours = time_ago_in_minutes / 60
         time_ago_in_days = time_ago_in_hours / 24
+        time_ago_in_weeks = time_ago_in_days / 7
+
         
-#        if time_ago_in_minutes >= 60
-#            "#{(time_ago_in_minutes / 60).to_i} hours ago"
-#        else
-#            "#{time_ago_in_minutes} minutes ago"
-#        end
-        
-        if time_ago_in_hours >= 24
+        if time_ago_in_weeks >= 52
+            "more than 1 year ago"
+        elsif time_ago_in_days >= 7
+            "#{(time_ago_in_weeks).round} weeks ago"
+        elsif time_ago_in_hours >= 24
             "#{(time_ago_in_days).round} days ago"
         elsif time_ago_in_minutes >= 60
             "#{(time_ago_in_hours).round} hours ago"

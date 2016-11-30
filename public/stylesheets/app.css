@@ -1,11 +1,12 @@
 header {
     background-color: #244751;
     color: #E8FDFF;
+    font-family: calibri;
 }
 
 body {
     background-color: whitesmoke;
-    font-family:Indie Flower;
+    font-family:arial;
 }
 
 main {
@@ -22,7 +23,6 @@ main {
 }
 
 h2:hover {
-    color: pink;
 }
 
 .actions:hover {

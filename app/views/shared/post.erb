@@ -4,13 +4,21 @@
         <h2><%= post.user.username %></h2>
         <h3><%= post.humanized_time_ago %></h3>
     </div>
-    <a class="photo" href="/posts/ <%= post.id %>">
+    <a class="photo" href="/posts/<%= post.id %>">
         <img src="<%= post.photo_url %>" alt="post from <%= post.user.username %>">      
     </a>
     <div class="actions">
-            <%= post.like_count %> likes
+            <%= erb(:"/shared/likes", {locals: {post: post}}) %>
         <span class="comment-count"><%= post.comment_count %> comments</span>
     </div>
+    
+    <% if current_user && allow_new_comment %>
+        <div class="actions">
+            <%= erb(:"/shared/new_comment", {locals: {post: post}}) %>
+            <span class="comment-count"><%= post.comment_count %> comments</span>
+        </div>
+    <% end %>
+    
     <ul class="comments">
         <% post.comments.each do |comment| %>
             <li>
